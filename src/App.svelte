@@ -2,7 +2,7 @@
 	import {auth,googleProvider} from "./firebase";
 	import {authState} from "rxfire/auth";
 
-	import Chatroom from "./Chatroom";
+	import Chatroom from "./Chatroom.svelte";
 
 	let user;
 
@@ -18,11 +18,11 @@
 </script>
 
 <style>
-	main{
+	main {
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%,-50%);
 		width: 100%;
 		height: 100%;
 		max-width: 400px;
@@ -31,13 +31,13 @@
 		border: 1px solid #eee;
 		box-shadow: 0px 5px 10px rgba(0,0,0,0.05);
 	}
-	.login-form{
+	.login-form {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%,-50%);
 	}
-	.login-form button{
+	.login-form button {
 		padding: 10px;
 		background: #fff;
 		color: #111;
@@ -46,7 +46,7 @@
 		outline: none;
 		border: 1px solid #bbb;
 	}
-	.login-form button i.fa{
+	.login-form button i.fa {
 		padding-right: 10px;
 		border-right: 1px solid #ddd;
 		color: #555;
@@ -55,14 +55,13 @@
 
 <main>
 	{#if user}
-	    <Chatroom user={user} logout={logout}/>
+			<Chatroom user={user} logout={logout}/>
 	{:else}
-	    <div class="login-form">
-			<button on:click={login}>
-				<i class="fa fa-google"></i>
-				Sign in with Google
-			</button>
-	    </div>
+			<div class="login-form">
+				<button on:click={login}>
+					<i class="fa fa-google"></i>
+					Sign In with Google
+				</button>
+			</div>
 	{/if}
 </main>
-
