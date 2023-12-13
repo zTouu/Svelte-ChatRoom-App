@@ -2,7 +2,7 @@
 	import {auth,googleProvider} from "./firebase";
 	import {authState} from "rxfire/auth";
 
-	import Chatroom from "./Chatroom.svelte";
+	import Chatroom from "./Chatroom";
 
 	let user;
 
